@@ -1,5 +1,5 @@
+![image](https://github.com/starlord-31/Machine-Learning-Zoomcamp-HW/assets/144388508/958ec70e-ecce-4242-adf9-1c153b4d7c22)
 # Predicting FIFA 24 Football Player Values
-![image](https://github.com/starlord-31/Machine-Learning-Zoomcamp-HW/assets/144388508/f7dda30e-5eb5-4045-b2c9-d40f62307b51)
 
 Dataset: https://www.kaggle.com/datasets/rehandl23/fifa-24-player-stats-dataset/
 
