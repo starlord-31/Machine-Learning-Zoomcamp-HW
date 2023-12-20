@@ -1,0 +1,14 @@
+FROM python:3.8.12-slim
+
+RUN pip install pipenv
+
+WORKDIR /app
+COPY ["Pipfile", "Pipfile.lock", "./"]
+
+RUN pipenv lock --clear && pipenv install --system --deploy
+
+COPY ["predict.py", "finalized_model.bin", "./"]
+
+EXPOSE 9696
+
+ENTRYPOINT ["gunicorn", "--bind=0.0.0.0:9696", "predict:app"]
