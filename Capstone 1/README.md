@@ -5,7 +5,7 @@ Dataset: https://www.kaggle.com/datasets/rehandl23/fifa-24-player-stats-dataset/
 
 Problem Description: Predicting FIFA 24 Football Player Values
 
-In this project, the aim is to develop a machine-learning model to predict the estimated value of FIFA football players. Using a dataset rich in player attributes, including demographics, physical traits, and performance metrics, the goal is to explore, clean, and preprocess the data. The focus is on experimenting with various machine learning models and selecting the most effective one for predicting player values. The end objective is to provide a useful tool for gamers, allowing them to estimate the in-game value of players based on their characteristics and skills.
+This project aims to develop a machine-learning model to predict the estimated value of FIFA football players. Using a dataset rich in player attributes, including demographics, physical traits, and performance metrics, the goal is to explore, clean, and preprocess the data. The focus is on experimenting with various machine learning models and selecting the most effective one for predicting player values. The end objective is to provide a useful tool for gamers, allowing them to estimate the in-game value of players based on their characteristics and skills.
 
 ## Running locally with gunicorn/waitress
 1. Clone this repository on your computer.
@@ -39,3 +39,18 @@ docker build -t value_prediction .
 docker run --rm -it -p 9060:9060 -d  value_prediction
 ```
 3. Run [predict_test.py](https://github.com/starlord-31/Machine-Learning-Zoomcamp-HW/blob/main/Capstone%201/predict_test.py) in a different terminal to see the predicted player value of a given player_attributes.
+
+## Cloud Deployment
+1. First, awsebcli was installed using the following command:
+```Python
+pipenv install awsebcli --dev
+```
+2. The model was deployed in the cloud through **AWS Elastic Beanstalk**. For this, first, an application called ```player-value-prediction``` was created under the Docker platform, with the following command:
+```Python
+eb init -p "Docker running on 64bit Amazon Linux 2" player-value-prediction
+```
+3. It can now be tested locally executing:
+```Python
+eb local run --port 9696
+```
+4. Run [predict_test.py](https://github.com/starlord-31/Machine-Learning-Zoomcamp-HW/blob/main/Capstone%201/predict_test.py) in a different terminal to see the predicted player value of a given player_attributes.
