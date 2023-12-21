@@ -40,7 +40,8 @@ docker run --rm -it -p 9060:9060 -d  value_prediction
 ```
 3. Run [predict_test.py](https://github.com/starlord-31/Machine-Learning-Zoomcamp-HW/blob/main/Capstone%201/predict_test.py) in a different terminal to see the predicted player value of a given player_attributes.
 
-## Cloud Deployment
+## EBCLI to deploy service 
+### Check if server works locally
 1. First, awsebcli was installed using the following command:
 ```Python
 pipenv install awsebcli --dev
@@ -54,3 +55,9 @@ eb init -p "Docker running on 64bit Amazon Linux 2" player-value-prediction
 eb local run --port 9696
 ```
 4. Run [predict_test.py](https://github.com/starlord-31/Machine-Learning-Zoomcamp-HW/blob/main/Capstone%201/predict_test.py) in a different terminal to see the predicted player value of a given player_attributes.
+
+With the application address provided by AWS, another test script was created [cloud_test.py]().
+
+## Web service on AWS Elastic Beanstalk
+### Test web service hosted on AWS Elastic Beanstalk
+Running the [cloud_test.py]() script in a command window will return the prediction using the player-value-prediction-env environment and player-value-prediction application created in the AWS cloud.
