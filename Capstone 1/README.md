@@ -29,3 +29,13 @@ waitress-serve --listen=0.0.0.0:9696 predict:app
 
 ![image](https://github.com/starlord-31/Machine-Learning-Zoomcamp-HW/assets/144388508/b381c598-8790-473c-8784-33f38bbd6686)
 
+## Running locally with Docker
+1. Build an image from a Dockerfile by the command:
+```Python
+docker build -t value_prediction .
+```
+2. Run service:
+```Python
+docker run --rm -it -p 9060:9060 -d  value_prediction
+```
+3. Run [predict_test.py](https://github.com/starlord-31/Machine-Learning-Zoomcamp-HW/blob/main/Capstone%201/predict_test.py) in a different terminal to see the predicted player value of a given player_attributes.
